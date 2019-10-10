@@ -33,7 +33,9 @@ exports.up = function(knex) {
             .references('id')
             .inTable('ingredients')
             .onUpdate('CASCADE')
-            .onDelete('RESTRICT');
+            .onDelete('RESTRICT')
+
+        tbl.string('ingredient_amount', 258).notNullable();
     })    
 
     .createTable('recipe_steps', tbl => {
